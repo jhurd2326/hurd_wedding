@@ -1,0 +1,40 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'bin/**/*'
+  TargetRubyVersion: 2.5.1
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Style/TrailingCommaInArguments:
+  # If `comma`, the cop requires a comma after the last argument, but only for
+  # parenthesized method calls where each argument is on its own line.
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/MutableConstant:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
