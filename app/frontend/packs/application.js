@@ -13,4 +13,6 @@ import Turbolinks from 'turbolinks';
 Rails.start();
 Turbolinks.start();
 
+import "../src/javascripts/mdbootstrap"
+
 console.log('Hello World from Webpacker')
