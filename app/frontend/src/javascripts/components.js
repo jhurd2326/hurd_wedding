@@ -1,1 +1,1 @@
-import GreetUser from "./components/GreetUser"
+import SideNav from "./components/SideNav"
