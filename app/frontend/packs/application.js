@@ -13,6 +13,7 @@ import Turbolinks from 'turbolinks';
 Rails.start();
 Turbolinks.start();
 
-import "../src/javascripts/mdbootstrap"
-
-console.log('Hello World from Webpacker')
+// Support component names relative to this directory:
+var componentRequireContext = require.context("src/javascripts/components", true)
+var ReactRailsUJS = require("react_ujs")
+ReactRailsUJS.useContext(componentRequireContext)
