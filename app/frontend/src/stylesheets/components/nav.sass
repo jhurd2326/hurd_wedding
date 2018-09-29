@@ -1,14 +1,84 @@
-.menu-button
-  color: #EFEFEF !important
-  margin-left: 15px !important
-  margin-top: 15px !important
-
-.side-nav
-  width: 200px
+.navbar
+  background-color: rgba(55, 55, 55, 0.8) !important
+  height: 8%
+  display: flex
 
 .nav-logo
+  height: 100%
+  width: 100px
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: contain
+  background-image: url("../src/images/logo.png")
+
+.nav-items-wrapper
+  height: 100%
+  margin-left: auto
+  margin-right: auto
+  display: table
+
+.nav-item
+  padding-left: 24px
+  padding-right: 24px
+  height: 100%
+  text-align: center
+  display: table-cell
+  vertical-align: middle
+
+  &.active
+    border-bottom: 1px solid #C0B283
+
+.nav-item:hover
+  background-color: #373737
+  cursor: pointer
+
+  h2
+    color: #C0B283 !important
+
+.nav-text
+  @extend .text-white
+  @extend .thin
+  margin-top: auto
+  margin-bottom: auto
+
+.menu-button-wrapper
+  position: absolute
+  display: table
+
+.menu-button
+  display: table-cell
+  vertical-align: middle
+
+.hidden-md-up
+  @media screen and (min-width: 750px)
+    display: none !important
+
+.hidden-sm-down
+  @media screen and (max-width: 749px)
+    display: none !important
+
+.account-button-wrapper
+  position: absolute
+  right: 2%
+  display: table
+
+.account-button
+  display: table-cell
+  vertical-align: middle
+
+.side-nav
+  background-color: #373737 !important
   width: 200px
-  height: 200px
-  background-position: center
-  background-size: cover
-  background-image: url("../src/images/logo.svg")
+
+.side-nav-items
+  margin-top: auto !important
+  margin-bottom: auto !important
+
+.side-nav-item
+  &.active
+    border-left: 4px solid #C0B283 !important
+
+.side-nav-bars
+  position: absolute
+  width: 4px
+  border-right: 1px solid #C0B283
