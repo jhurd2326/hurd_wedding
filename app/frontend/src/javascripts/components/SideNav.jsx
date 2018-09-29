@@ -26,36 +26,33 @@ export default class SideNav extends React.Component {
 
   render () {
     return (
-      <div>
-        <div className="menu-button-wrapper">
-          <div className="menu-button-container text-center">
-            <IconButton onClick={this.toggleNav} className="menu-button">
+      <React.Fragment>
+        <div className="menu-button-wrapper h-100">
+          <div className="menu-button h-100">
+            <IconButton onClick={this.toggleNav} className="text-white">
               <MenuIcon/>
             </IconButton>
           </div>
-          <div className="menu-label-container text-center text-white">
-            <h3 className="menu-label">The Hurds</h3>
-          </div>
         </div>
 
-        <Drawer open={this.state.isOpen} onClose={this.toggleNav}>
-          <List disablePadding={true} classes={{root: 'side-nav'}}>
-            <div className="nav-logo"/>
-            <ListItem button={true}>
-              <ListItemText>Home</ListItemText>
+        <Drawer open={this.state.isOpen} onClose={this.toggleNav} classes={{paper: 'side-nav'}}>
+          <div className="side-nav-bars h-100"></div>
+          <List classes={{root: 'side-nav-items'}}>
+            <ListItem button={true} classes={{root: 'my-4 side-nav-item active'}}>
+              <ListItemText><span className="text-white thin">Wedding Info</span></ListItemText>
             </ListItem>
-            <ListItem button={true}>
-              <ListItemText>Our Story</ListItemText>
+            <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
+              <ListItemText><span className="text-white thin">Our Story</span></ListItemText>
             </ListItem>
-            <ListItem button={true}>
-              <ListItemText>The Venue</ListItemText>
+            <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
+              <ListItemText><span className="text-white thin">The Venue</span></ListItemText>
             </ListItem>
-            <ListItem button={true}>
-              <ListItemText>RSVP</ListItemText>
+            <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
+              <ListItemText><span className="text-white thin">RSVP</span></ListItemText>
             </ListItem>
           </List>
         </Drawer>
-      </div>
+      </React.Fragment>
     );
   }
 }
