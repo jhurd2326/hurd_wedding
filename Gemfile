@@ -34,3 +34,7 @@ group :test do
   gem "chromedriver-helper"
   gem "selenium-webdriver"
 end
+
+group :production do
+  gem "passenger"
+end
