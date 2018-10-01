@@ -25,7 +25,7 @@ export default class NavBar extends React.Component {
 
           <div className="nav-item hidden-sm-down">
             <Typography variant="title" classes={{root: 'nav-text'}}>
-              The Venue
+              Venue
             </Typography>
           </div>
 
