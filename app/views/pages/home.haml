@@ -1,3 +1,22 @@
 .full-screen.background-image--home
   .dark-overlay.position-absolute
     = react_component "HomePageText"
+
+.bg-charcoal.py-10
+  .jake-sarah-wrapper.mb-10
+    .jake-sarah
+      .jake-sarah-text
+        %h1.text-white.thin.word Jake Hurd
+        %h1.text-gold.thin.mx-3.word +
+        %h1.text-white.thin.word Sarah Nash
+      .gold-line-thin.hidden-md-up
+    .countdown-text.text-white.thin.my-5
+      .ml-10.mr-15
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  .w-100.text-center
+    %h1.text-white.thin.mt-0.mb-4.hidden-sm-down Join Us On This Adventure In
+    %h2.text-white.thin.mt-0.mb-4.hidden-md-up Join Us On This Adventure In
+    .flex
+      .mx-auto
+        = react_component "Countdown", date: Time.new(2019, 5, 26, 17, 0, 0)

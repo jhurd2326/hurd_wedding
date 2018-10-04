@@ -1,0 +1,79 @@
+//**** Logo ****//
+.home-text-container
+  position: absolute
+  bottom: 10%
+  left: 10%
+
+  @media screen and (max-width: 750px)
+    left: 0
+    width: 100%
+
+.home-text-wrapper
+  @media screen and (max-width: 750px)
+    margin-left: auto
+    margin-right: auto
+
+    .fit-content
+      width: auto !important
+      text-align: center
+
+.home-text
+  @extend .text-white
+  letter-spacing: 6px !important
+
+.white-line
+  border-top: 3px solid $paper
+
+.white-line-thin
+  border-top: 1px solid $paper
+
+.gold-line
+  border-top: 3px solid $gold
+
+.gold-line-thin
+  border-top: 1px solid $gold
+
+//**** Countdown div ****//
+
+.jake-sarah-wrapper
+  @media screen and (min-width: 750px)
+    display: flex
+
+.jake-sarah
+  width: 100%
+  @media screen and (min-width: 750px)
+    display: flex
+    width: 50%
+    border-right: 1px solid $gold
+
+  .jake-sarah-text
+    text-align: center
+    margin-left: 20%
+    margin-right: 20%
+
+    @media screen and (min-width: 750px)
+      margin-left: auto
+      margin-top: auto
+      margin-bottom: auto
+      margin-right: 40px
+      border-bottom: none
+
+    .word
+      display: inline
+
+      @media screen and (max-width: 768px)
+        display: block
+
+  .gold-line-thin
+    margin-left: 20%
+    margin-right: 20%
+    margin-top: 20px
+
+.countdown-text
+  width: 100%
+  text-align: center
+
+  @media screen and (min-width: 750px)
+    display: flex
+    width: 50%
+    text-align: left
