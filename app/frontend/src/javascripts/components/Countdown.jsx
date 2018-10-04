@@ -7,12 +7,7 @@ export default class Countdown extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      days: 0,
-      hours: 0,
-      min: 0,
-      sec: 0,
-    }
+    this.state = this.calculateCountdown(this.props.date);
   }
 
   componentDidMount() {
@@ -80,9 +75,12 @@ export default class Countdown extends React.Component {
     const countDown = this.state;
 
     return (
-      <span>
-        <div className="display-inline mr-5">
-          <Typography variant="display2" classes={{root: "text-center"}}>
+      <span className="table h-100 w-100">
+        <div className="display-inline">
+          <Typography variant="display3" classes={{root: "text-center mx-5 hidden-sm-down"}}>
+            <span className="text-white">{this.addLeadingZeros(countDown.days)}</span>
+          </Typography>
+          <Typography variant="display1" classes={{root: "text-center mx-2 hidden-md-up"}}>
             <span className="text-white">{this.addLeadingZeros(countDown.days)}</span>
           </Typography>
           <Typography variant="caption" classes={{root: "text-center"}}>
@@ -90,8 +88,11 @@ export default class Countdown extends React.Component {
           </Typography>
         </div>
 
-        <div className="display-inline mr-5">
-          <Typography variant="display2" classes={{root: "text-center"}}>
+        <div className="display-inline">
+          <Typography variant="display3" classes={{root: "text-center mx-5 hidden-sm-down"}}>
+            <span className="text-white">{this.addLeadingZeros(countDown.hours)}</span>
+          </Typography>
+          <Typography variant="display1" classes={{root: "text-center mx-2 hidden-md-up"}}>
             <span className="text-white">{this.addLeadingZeros(countDown.hours)}</span>
           </Typography>
           <Typography variant="caption" classes={{root: "text-center"}}>
@@ -99,8 +100,11 @@ export default class Countdown extends React.Component {
           </Typography>
         </div>
 
-        <div className="display-inline mr-5 text-center">
-          <Typography variant="display2" classes={{root: "text-center"}}>
+        <div className="display-inline text-center">
+          <Typography variant="display3" classes={{root: "text-center mx-5 hidden-sm-down"}}>
+            <span className="text-white">{this.addLeadingZeros(countDown.min)}</span>
+          </Typography>
+          <Typography variant="display1" classes={{root: "text-center mx-2 hidden-md-up"}}>
             <span className="text-white">{this.addLeadingZeros(countDown.min)}</span>
           </Typography>
           <Typography variant="caption" classes={{root: "text-center"}}>
@@ -108,8 +112,11 @@ export default class Countdown extends React.Component {
           </Typography>
         </div>
 
-        <div className="display-inline mr-5">
-          <Typography variant="display2" classes={{root: "text-center"}}>
+        <div className="display-inline text-center">
+          <Typography variant="display3" classes={{root: "text-center mx-5 hidden-sm-down"}}>
+            <span className="text-white">{this.addLeadingZeros(countDown.sec)}</span>
+          </Typography>
+          <Typography variant="display1" classes={{root: "text-center mx-2 hidden-md-up"}}>
             <span className="text-white">{this.addLeadingZeros(countDown.sec)}</span>
           </Typography>
           <Typography variant="caption" classes={{root: "text-center"}}>
