@@ -17,3 +17,5 @@ Turbolinks.start();
 var componentRequireContext = require.context("src/javascripts/components", true)
 var ReactRailsUJS = require("react_ujs")
 ReactRailsUJS.useContext(componentRequireContext)
+
+import "../src/javascripts/scripts"
