@@ -10,6 +10,6 @@
     = javascript_pack_tag "application", "data-turbolinks-track": "reload"
     = stylesheet_pack_tag "stylesheets", "data-turbolinks-track": "reload"
   %body
-    = react_component 'NavBar'
+    = react_component 'NavBar', active_link: params[:action]
     = yield
     = render "layouts/footer"

@@ -42,10 +42,10 @@ export default class SideNav extends React.Component {
               <ListItemText><span className="text-white thin">Wedding Info</span></ListItemText>
             </ListItem>
             <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
-              <ListItemText><span className="text-white thin">Our Story</span></ListItemText>
+              <ListItemText><span className="text-white thin">Venue</span></ListItemText>
             </ListItem>
             <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
-              <ListItemText><span className="text-white thin">The Venue</span></ListItemText>
+              <ListItemText><span className="text-white thin">About Us</span></ListItemText>
             </ListItem>
             <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
               <ListItemText><span className="text-white thin">RSVP</span></ListItemText>

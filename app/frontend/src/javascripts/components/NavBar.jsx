@@ -15,30 +15,31 @@ export default class NavBar extends React.Component {
         <div className="hidden-md-up h-100">
           <SideNav></SideNav>
         </div>
-
         <div className="nav-items-wrapper">
-          <div className="nav-item hidden-sm-down active">
+          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "wedding_info" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               Wedding Info
             </Typography>
           </div>
 
-          <div className="nav-item hidden-sm-down">
+          <a href="/venue" className={"nav-item hidden-sm-down " + (this.props.active_link == "venue" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               Venue
             </Typography>
-          </div>
+          </a>
+
 
           <div className="nav-logo">
+            <a href="/" className="home-button" />
           </div>
 
-          <div className="nav-item hidden-sm-down">
+          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "about_us" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               About Us
             </Typography>
           </div>
 
-          <div className="nav-item hidden-sm-down">
+          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "rsvp" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               RSVP
             </Typography>
