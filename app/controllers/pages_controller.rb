@@ -4,6 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def venue
+  def info
   end
 end

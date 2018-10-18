@@ -13,29 +13,28 @@ export default class NavBar extends React.Component {
     return (
       <AppBar classes={{root: 'navbar'}}>
         <div className="hidden-md-up h-100">
-          <SideNav></SideNav>
+          <SideNav active_link={this.props.active_link}></SideNav>
         </div>
         <div className="nav-items-wrapper">
-          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "wedding_info" ? "active" : "")}>
+          <a href="/info" className={"nav-item hidden-sm-down " + (this.props.active_link == "info" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               Wedding Info
             </Typography>
-          </div>
-
-          <a href="/venue" className={"nav-item hidden-sm-down " + (this.props.active_link == "venue" ? "active" : "")}>
-            <Typography variant="title" classes={{root: 'nav-text'}}>
-              Venue
-            </Typography>
           </a>
 
+          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "about_us" ? "active" : "")}>
+            <Typography variant="title" classes={{root: 'nav-text'}}>
+              About Us
+            </Typography>
+          </div>
 
           <div className="nav-logo">
             <a href="/" className="home-button" />
           </div>
 
-          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "about_us" ? "active" : "")}>
+          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "registry" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
-              About Us
+              Registry
             </Typography>
           </div>
 
