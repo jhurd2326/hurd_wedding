@@ -21,6 +21,6 @@
 	<g>
 		<line style="stroke:#C0B283;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="26" y1="28.879" x2="18" y2="28.879"/>
 		<line style="stroke:#C0B283;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="29" y1="25.879" x2="29" y2="14.879"/>
-		<circle style="fill:#AFA277;stroke:#373737;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="29" cy="28.879" r="3"/>
+		<circle style="fill:#AFA277;stroke:#686868;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="29" cy="28.879" r="3"/>
 	</g>
 </svg>
