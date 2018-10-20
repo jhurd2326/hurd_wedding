@@ -47,7 +47,7 @@ export default class NavBar extends React.Component {
 
         <div className="account-button-wrapper fit-content h-100">
           <div className="account-button h-100">
-            <IconButton className="text-white">
+            <IconButton className="account-icon">
               <AccountCircleIcon/>
             </IconButton>
           </div>

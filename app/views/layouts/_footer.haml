@@ -1,7 +1,24 @@
-%footer.text-white.thin.p-5.flex
-  .logo
-    Logo made with
-    %a{href: "https://www.designevo.com/en/", title: "Free Online Logo Maker"}
-      DesignEvo
-  .copyright
-    Copyright &copy 2018
+%footer
+  .desktop-footer.text-white.thin.p-5.flex
+    .logo
+      Logo by
+      %a{ href: "https://www.designevo.com/en/", title: "Free Online Logo Maker" }
+        DesignEvo
+
+      = "--- Icons by "
+      %a{ href: "https://www.flaticon.com/", title: "Flaticon" }
+        FlatIcon
+    .copyright
+      Copyright &copy 2018
+
+  .mobile-footer.text-white.thin.p-5.text-center
+    %p
+      Logo by
+      %a{ href: "https://www.designevo.com/en/", title: "Free Online Logo Maker" }
+        DesignEvo
+    %p
+      Icons by
+      %a{ href: "https://www.flaticon.com/", title: "Flaticon" }
+        FlatIcon
+    %p
+      Copyright &copy 2018

@@ -5,29 +5,98 @@
     @media screen and (max-width: 749px)
       font-size: 3rem !important
 
+.venue-ceremony
+  margin-left: 20px
+  margin-right: 20px
+  border-left: 1px solid $gold
+  border-right: 1px solid $gold
+  display: block
+  @media screen and (min-width: 1250px)
+    display: flex
+
 //***** Venue *****//
 
 .venue-wrapper
-  @media screen and (min-width: 750px)
-    border-left: 1px solid $gold
-    margin-left: 20px
+  @media screen and (min-width: 1250px)
+    width: 50%
 
-.venue-header
-  text-align: center
-  width: 100%
-  @media screen and (min-width: 750px)
-    text-align: left
+  .venue-header
+    text-align: center
+    @media screen and (min-width: 750px)
+      text-align: left
 
-.venue-info
-  text-align: center
-  @media screen and (min-width: 750px)
-    text-align: left
-    margin-left: 80px
+  .venue-info
+    text-align: center
+    @media screen and (min-width: 750px)
+      text-align: left
+      margin-left: 80px
 
-.venue-map
-  width: 100%
-  max-width: 600px
-  margin-left: auto
-  margin-right: auto
-  @media screen and (min-width: 750px)
-    margin-left: 80px
+  .venue-description
+    @extend .venue-info
+
+  .venue-map
+    max-width: 600px
+    margin-left: auto
+    margin-right: auto
+    @media screen and (min-width: 750px)
+      margin-left: 80px
+
+//***** Ceremony *****//
+
+.ceremony-wrapper
+  @media screen and (min-width: 1250px)
+    width: 50%
+
+  .ceremony-header
+    text-align: center
+    @media screen and (min-width: 750px)
+      text-align: right
+    @media screen and (max-width: 1249px) and (min-width: 750px)
+      text-align: left
+
+  .ceremony-info
+    @media screen and (min-width: 750px)
+      margin-right: 80px
+
+    table
+      text-align: justify
+      max-width: 750px
+      @media screen and (min-width: 1250px)
+        float: right
+        margin-top: 80px
+
+      td
+        @media screen and (max-width: 749px)
+          display: block
+          text-align: center
+          width: fit-content
+          margin-left: auto
+          margin-right: auto
+
+          &.icon-cell
+            margin-top: 40px
+            margin-bottom: 20px
+
+      td.text
+        @media screen and (max-width: 749px)
+          padding-right: 20px
+          padding-left: 20px
+
+      .icon
+        width: 60px
+        height: 60px
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+
+      .power-off-icon
+        @extend .icon
+        background-image: url("../src/images/icons/plug.svg")
+
+      .time-icon
+        @extend .icon
+        background-image: url("../src/images/icons/time.svg")
+
+      .vest-icon
+        @extend .icon
+        background-image: url("../src/images/icons/vest.svg")
