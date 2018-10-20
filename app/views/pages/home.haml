@@ -9,12 +9,14 @@
         %h1.text-white.thin.word Jake Hurd
         %h1.text-gold.thin.mx-3.word +
         %h1.text-white.thin.word Sarah Nash
-        %h4.text-white.thin.mt-2
+        %h4.text-white.thin.mt-6
           %span Sunday
           %span.mx-1 -
           %span May 26th
           %span.mx-1 -
           %span 2019
+          %br
+          .mt-2 5:30 pm
       .gold-line-thin.hidden-md-up
     .countdown-text.text-white.thin.my-5
       .mx-10
@@ -28,4 +30,4 @@
     %h2.text-white.thin.mt-0.mb-4.hidden-md-up Join Us On This Adventure In
     .flex
       .mx-auto
-        = react_component "Countdown", date: Time.new(2019, 5, 26, 17, 0, 0)
+        = react_component "Countdown", date: Time.new(2019, 5, 26, 17, 30, 0)
