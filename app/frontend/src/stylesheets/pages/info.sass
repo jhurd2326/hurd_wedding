@@ -100,3 +100,43 @@
       .vest-icon
         @extend .icon
         background-image: url("../src/images/icons/vest.svg")
+
+//***** Other Info *****//
+
+.other-info-wrapper
+  margin-left: 20px
+  margin-right: 20px
+  border-left: 1px solid $gold
+  border-right: 1px solid $gold
+  
+  @media screen and (max-width: 749px)
+    display: block
+
+  .wrapper
+    @media screen and (min-width: 750px)
+      width: 33%
+      margin-top: 0 !important
+
+    .header-underline
+      border-bottom: 1px solid $gold
+      height: 1px
+      width: 50px
+
+  .icon
+    width: 60px
+    height: 60px
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: 60% 60%
+    border-radius: 50%
+
+    &:hover
+      background-color: $charcoal-dark
+
+  .facebook-icon
+    @extend .icon
+    background-image: url("../src/images/icons/facebook.svg")
+
+  .instagram-icon
+    @extend .icon
+    background-image: url("../src/images/icons/instagram.svg")
