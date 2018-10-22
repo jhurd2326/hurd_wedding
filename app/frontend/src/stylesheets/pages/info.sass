@@ -5,11 +5,14 @@
     @media screen and (max-width: 749px)
       font-size: 3rem !important
 
-.venue-ceremony
+.section-wrapper
   margin-left: 20px
   margin-right: 20px
   border-left: 1px solid $gold
   border-right: 1px solid $gold
+
+.venue-ceremony
+  @extend .section-wrapper
   display: block
   @media screen and (min-width: 1250px)
     display: flex
@@ -104,11 +107,8 @@
 //***** Other Info *****//
 
 .other-info-wrapper
-  margin-left: 20px
-  margin-right: 20px
-  border-left: 1px solid $gold
-  border-right: 1px solid $gold
-  
+  @extend .section-wrapper
+
   @media screen and (max-width: 749px)
     display: block
 
@@ -140,3 +140,40 @@
   .instagram-icon
     @extend .icon
     background-image: url("../src/images/icons/instagram.svg")
+
+//***** The Team *****//
+
+.team-section-wrapper
+  @extend .section-wrapper
+
+  .section-header
+    .header-underline
+      border-bottom: 2px solid $gold
+      width: 120px
+
+  .team-wrapper
+    @media screen and (max-width: 749px)
+      display: block
+
+    .wrapper
+      @media screen and (min-width: 750px)
+        width: 50%
+
+      .header-underline
+        border-bottom: 1px solid $gold
+        width: 20px
+
+      .icon
+        width: 100px
+        height: 100px
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+
+      .suit-icon
+        @extend .icon
+        background-image: url("../src/images/icons/suit.svg")
+
+      .dress-icon
+        @extend .icon
+        background-image: url("../src/images/icons/wedding-dress.svg")
