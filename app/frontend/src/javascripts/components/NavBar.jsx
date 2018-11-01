@@ -22,11 +22,11 @@ export default class NavBar extends React.Component {
             </Typography>
           </a>
 
-          <div className={"nav-item hidden-sm-down " + (this.props.active_link == "about_us" ? "active" : "")}>
+          <a href="/about-us" className={"nav-item hidden-sm-down " + (this.props.active_link == "about_us" ? "active" : "")}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               About Us
             </Typography>
-          </div>
+          </a>
 
           <div className="nav-logo">
             <a href="/" className="home-button" />
