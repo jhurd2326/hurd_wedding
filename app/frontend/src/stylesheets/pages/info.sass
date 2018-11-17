@@ -1,15 +1,13 @@
-.info-header-text
-  position: absolute
-  bottom: 20%
-  h1
-    @media screen and (max-width: 749px)
-      font-size: 3rem !important
-
 .section-wrapper
   margin-left: 20px
   margin-right: 20px
   border-left: 1px solid $gold
   border-right: 1px solid $gold
+
+.section-header
+  .header-underline
+    border-bottom: 2px solid $gold
+    width: 120px
 
 .venue-ceremony
   @extend .section-wrapper
@@ -146,11 +144,6 @@
 .team-section-wrapper
   @extend .section-wrapper
 
-  .section-header
-    .header-underline
-      border-bottom: 2px solid $gold
-      width: 120px
-
   .team-wrapper
     @media screen and (max-width: 749px)
       display: block
@@ -189,48 +182,3 @@
       .dress-icon
         @extend .icon.small
         background-image: url("../src/images/icons/wedding-dress.svg")
-
-      .jacob
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/jacob.png")
-
-      .ben
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/ben.png")
-
-      .james
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/james.png")
-
-      .mitchell
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/mitchell.png")
-
-      .sarah-w
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/sarah_w.png")
-
-      .lizzy
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/lizzy.png")
-
-      .elena
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/elena.png")
-
-      .sarah-p
-        @extend .icon
-        @extend .round
-        background-image: url("../src/images/people/sarah_p.png")
-
-      .placeholder-person
-        @extend .icon
-        @extend .round
-        background-color: grey

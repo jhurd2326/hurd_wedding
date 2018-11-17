@@ -1,0 +1,40 @@
+.venue-ceremony.pb-12
+  .venue-wrapper.p-5
+    .venue-header
+      = react_component "CustomText", text: "Venue", size: "display2", classes: "text-white thin mb-4"
+    .venue-info.text-white
+      %a{ href: "http://www.thebarnatforevermorefarm.com/" }
+        %h1.thin The Barn at Forevermore Farm
+      %p.thin 135 Waldon Rd, Moore, SC 29369
+    .venue-map
+      %iframe{ width: "100%", height: "400px", frameborder: "0", style: "border:0", allowfullscreen: true,
+        src: "https://www.google.com/maps/embed/v1/place?key=#{Rails.configuration.google[:maps_api_key]}&q=The+Barn+at+Forevermore+Farm,Moore+SC&zoom=9" }
+  .ceremony-wrapper.p-5
+    .ceremony-header
+      = react_component "CustomText", text: "Ceremony", size: "display2", classes: "text-white thin mb-4"
+    .ceremony-info.text-white
+      %table.my-auto
+        %tr
+          %td.icon-cell.px-10
+            .power-off-icon
+          %td.text
+            %p.thin
+              We will be having an unplugged ceremony at our wedding. While we fully encourage
+              everyone to bring their phones and cameras to document the big day, we politely request that all
+              devices be turned off during the ceremony. Once we receive the professional images
+              from our photographer after the wedding, we will be happy to share them with everyone!
+        %tr
+          %td.icon-cell.px-10
+            .time-icon
+          %td.text
+            %p.thin
+              The ceremony will begin promptly at 5:30 pm. Please try to arrive a little early so
+              that you can make yourself at home and have a look around.
+        %tr
+          %td.icon-cell.px-10
+            .vest-icon
+          %td.text
+            %p.thin
+              Formal attire is definitely not required, just wear whatever makes you feel comfortable.
+              Something along the lines of a dress shirt and khakis for the gents or a skirt and sweater
+              for the ladies would be lovely.

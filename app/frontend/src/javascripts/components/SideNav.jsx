@@ -38,20 +38,20 @@ export default class SideNav extends React.Component {
         <Drawer open={this.state.isOpen} onClose={this.toggleNav} classes={{paper: 'side-nav'}}>
           <div className="side-nav-bars h-100"></div>
           <List classes={{root: 'side-nav-items'}}>
-            <a href="/info">
-              <ListItem button={true} classes={{root: 'my-4 side-nav-item ' + (this.props.active_link == "info" ? "active" : "")}}>
+            <a href="#wedding-information">
+              <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
                 <ListItemText><span className="text-white thin">Wedding Info</span></ListItemText>
               </ListItem>
             </a>
-            <a href="/about-us">
-              <ListItem button={true} classes={{root: 'my-4 side-nav-item ' + (this.props.active_link == "about_us" ? "active" : "")}}>
-                <ListItemText><span className="text-white thin">About Us</span></ListItemText>
+            <a href="#team">
+              <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
+                <ListItemText><span className="text-white thin">The Team</span></ListItemText>
               </ListItem>
             </a>
-            <ListItem button={true} classes={{root: 'my-4 side-nav-item ' + (this.props.active_link == "registry" ? "active" : "")}}>
+            <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
               <ListItemText><span className="text-white thin">Registry</span></ListItemText>
             </ListItem>
-            <ListItem button={true} classes={{root: 'my-4 side-nav-item ' + (this.props.active_link == "rsvp" ? "active" : "")}}>
+            <ListItem button={true} classes={{root: 'my-4 side-nav-item'}}>
               <ListItemText><span className="text-white thin">RSVP</span></ListItemText>
             </ListItem>
           </List>
