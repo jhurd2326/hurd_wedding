@@ -32,11 +32,11 @@ export default class NavBar extends React.Component {
             <a href="#welcome" className="home-button" />
           </div>
 
-          <div className={"nav-item hidden-sm-down"}>
+          <a href="#registry" className={"nav-item hidden-sm-down"}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               Registry
             </Typography>
-          </div>
+          </a>
 
           <div className={"nav-item hidden-sm-down"}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
