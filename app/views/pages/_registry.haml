@@ -1,14 +1,35 @@
-.bg-charcoal
+.bg-charcoal.registry-wrapper
   .section-wrapper.pb-8
     .section-header.text-center.py-12
       = react_component "CustomText", text: "Registry", size: "display2", classes: "text-white thin"
       .header-underline.mx-auto.mt-4
 
-    .text-center.text-white.thin.mb-8
-      .mb-1
-        Please note that your love and support is all we ask for on our special day.
-      %div
-        However, if you do wish to celebrate with a gift, we are registered at Target
+    .registry-text.text-center.text-white.thin.mb-12.px-4.mx-auto
+      While all that we truly desire is the presence of our friends and family on our big day,
+      we have created a registry fund if you would still like to celebrate with a gift. We realized that
+      we pretty much have all of the basics covered to start out our new life together so we wanted to turn this
+      into an opportunity to give back to a couple causeses that are close to our hearts.
+      %br
+      %br
+      All of the money in the fund will be split evenly between these three causes:
 
-    .target-logo.mx-auto
-      %a{href: "https://www.target.com/gift-registry/wedding-registry", target: "_blank"}
+    .logo-container.text-white.thin.text-center.mb-8
+      .logo-wrapper.mx-auto.mb-8
+        .the-landing.mx-auto
+        %small.landing-text
+          The Landing is a daytime drop-in center located in Houston, TX where survivors of human
+          trafficking and sexual exploitation can experience an atmosphere of acceptance and have
+          basic needs met. Sarah interned with The Landing this past summer and this is a way for
+          us to help them continue the great work they are doing.
+      .logo-wrapper.mx-auto.mb-8
+        .national-park-foundation.mx-auto
+        %small.nation-park-text
+          National parks hold a special place in our hearts. So many of our fondest memories together
+          have taken place in a national park. This is a way for us to give back to the parks to help
+          protect and conserve them so that we can all enjoy them.
+      .logo-wrapper.mx-auto.mb-8
+        .honeymoon.mx-auto
+        %small.honeymoon-text
+          Our favorite way to spend time together is exploring new places, meeting new people, and
+          experiencing other cultures. Part of the registry fund will help us to do
+          that on our honeymoon.

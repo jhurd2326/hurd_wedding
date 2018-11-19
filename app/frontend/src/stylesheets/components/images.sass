@@ -15,19 +15,6 @@
   width: 100%
   height: 100%
 
-.target-logo
-  width: 135px
-  height: 170px
-  background-position: center center
-  background-repeat: no-repeat
-  background-size: cover
-  background-image: url("../src/images/target.png")
-
-  a
-    display: block
-    width: 135px
-    height: 170px
-
 .background-image--home
   @extend .background-image
   position: relative
@@ -50,3 +37,11 @@
   @extend .background-image
   position: relative
   background-image: url("../src/images/us.jpg")
+
+.background-image--fence
+  @extend .background-image
+  position: relative
+  background-image: url("../src/images/fence.jpg")
+
+  @media screen and (orientation: portrait)
+    background-position: 65% center
