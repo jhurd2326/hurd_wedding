@@ -38,11 +38,11 @@ export default class NavBar extends React.Component {
             </Typography>
           </a>
 
-          <div className={"nav-item hidden-sm-down"}>
+          <a href="#rsvp" className={"nav-item hidden-sm-down"}>
             <Typography variant="title" classes={{root: 'nav-text'}}>
               RSVP
             </Typography>
-          </div>
+          </a>
         </div>
 
         <div className="account-button-wrapper fit-content h-100">

@@ -9,6 +9,9 @@
     border-bottom: 2px solid $gold
     width: 120px
 
+    &.short
+      width: 60px
+
 .venue-ceremony
   @extend .section-wrapper
   display: block
@@ -83,25 +86,6 @@
           padding-right: 20px
           padding-left: 20px
 
-      .icon
-        width: 60px
-        height: 60px
-        background-position: center center
-        background-repeat: no-repeat
-        background-size: cover
-
-      .power-off-icon
-        @extend .icon
-        background-image: url("../src/images/icons/plug.svg")
-
-      .time-icon
-        @extend .icon
-        background-image: url("../src/images/icons/time.svg")
-
-      .vest-icon
-        @extend .icon
-        background-image: url("../src/images/icons/vest.svg")
-
 //***** Other Info *****//
 
 .other-info-wrapper
@@ -119,22 +103,3 @@
       border-bottom: 1px solid $gold
       height: 1px
       width: 50px
-
-  .icon
-    width: 60px
-    height: 60px
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: 60% 60%
-    border-radius: 50%
-
-    &:hover
-      background-color: $charcoal-dark
-
-  .facebook-icon
-    @extend .icon
-    background-image: url("../src/images/icons/facebook.svg")
-
-  .instagram-icon
-    @extend .icon
-    background-image: url("../src/images/icons/instagram.svg")
