@@ -1,3 +1,22 @@
 .rsvp-text
   max-width: 550px
   line-height: 1.5rem
+
+.rsvp-modal
+  width: 40%
+  position: absolute
+  top: 10%
+  left: 30%
+  background-color: $charcoal
+  outline: none
+  border-radius: 10px
+
+  @media screen and (max-width: 749px)
+    width: 90%
+    left: 5%
+
+  .rsvp-form-row
+    display: flex
+
+    @media screen and (max-width: 749px)
+      display: block
