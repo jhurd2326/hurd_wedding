@@ -1,17 +1,13 @@
 .bg-charcoal.rsvp-wrapper
   .section-wrapper.pb-8
-    .section-header.text-center.py-12
+    .section-header.text-center.pt-12.pb-6
       = react_component "CustomText", text: "RSVP", size: "display2", classes: "text-white thin"
       .header-underline.short.mx-auto.mt-4
-
-    .rsvp-text.text-center.text-white.thin.mb-6.px-4.mx-auto
+    .invitation-icon.mx-auto.my-4
+    .rsvp-text.text-center.text-white.thin.mx-auto.mt-4.mb-6
       Please enter the code found on your invitation to RSVP. If you have already RSVP'd
       and would like to view or edit your information, you can enter your invitation
       code or email address to do so.
 
-      %br
-      %br
-      We look forward to seeing you on our big day!
-
-    .fit-content.mx-auto
+    .fit-content.mx-auto.mb-6
       = react_component "RsvpForm"

@@ -44,14 +44,6 @@ export default class NavBar extends React.Component {
             </Typography>
           </a>
         </div>
-
-        <div className="account-button-wrapper fit-content h-100">
-          <div className="account-button h-100">
-            <IconButton className="account-icon">
-              <AccountCircleIcon/>
-            </IconButton>
-          </div>
-        </div>
       </AppBar>
     );
   }
