@@ -7,18 +7,17 @@ import {
   TextField,
   Button,
   Snackbar,
-  Modal,
   Typography,
-} from '@material-ui/core'
+} from "@material-ui/core"
 
 import theme from "./Theme"
+import RsvpModal from "./RsvpModal"
 
 export default class RsvpForm extends React.Component {
   state = {
     rsvp_search: "",
     snackbar_open: false,
     modal_open: false,
-    first_name: "",
   };
 
   handleChange = name => event => {
@@ -54,53 +53,7 @@ export default class RsvpForm extends React.Component {
           message={<span id="message-id">Nothing could be found</span>}
         />
 
-        <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={this.state.modal_open}
-          onClose={this.closeModal}
-        >
-          <div className="rsvp-modal">
-            <div className="my-8 mx-12">
-              <div className="section-header mb-4">
-                <Typography variant="display2" id="modal-title" classes={{root: "text-center text-white thin"}}>
-                  Information
-                </Typography>
-                <div className="header-underline mx-auto mt-4"></div>
-              </div>
-              <div className="text-center text-white thin mb-8">
-                Please enter your information below
-              </div>
-              <MuiThemeProvider theme={theme}>
-                <div className="rsvp-form-row">
-                  <div className="fit-content mx-auto mb-6">
-                    <TextField
-                      id="first_name"
-                      label="First Name"
-                      value={this.state.first_name}
-                      onChange={this.handleChange("first_name")}
-                      classes={{root: "rsvp-field"}}
-                    />
-                  </div>
-                  <div className="fit-content mx-auto mb-6">
-                    <TextField
-                      id="last_name"
-                      label="Last Name"
-                      value={this.state.last_name}
-                      onChange={this.handleChange("last_name")}
-                      classes={{root: "rsvp-field"}}
-                    />
-                  </div>
-                </div>
-                <div className="text-center">
-                  <Button variant="outlined" size="small" color="primary">
-                    RSVP
-                  </Button>
-                </div>
-              </MuiThemeProvider>
-            </div>
-          </div>
-        </Modal>
+        <RsvpModal open={this.state.modal_open} closeModal={this.closeModal} />
 
         <MuiThemeProvider theme={theme}>
           <div className="mb-6">
