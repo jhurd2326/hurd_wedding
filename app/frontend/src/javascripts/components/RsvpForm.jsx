@@ -1,24 +1,25 @@
 import React from "react";
 
 import {
-  withStyles,
-  MuiThemeProvider,
-  createMuiTheme,
   TextField,
-  Button,
-  Snackbar,
-  Typography,
+  FormControl,
+  FormLabel,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
 } from "@material-ui/core"
 
-import theme from "./Theme"
-import RsvpModal from "./RsvpModal"
+import {
+  RadioButtonUncheckedIcon,
+  RadioButtonCheckedIcon,
+} from "@material-ui/icons"
 
 export default class RsvpForm extends React.Component {
   state = {
-    rsvp_search: "",
-    snackbar_open: false,
-    modal_open: false,
-  };
+    first_name: "",
+    last_name: "",
+    attending_rehearsal: "no",
+  }
 
   handleChange = name => event => {
     this.setState({
@@ -26,50 +27,54 @@ export default class RsvpForm extends React.Component {
     });
   };
 
-  closeSnackBar = () => {
-    this.setState({ snackbar_open: false });
-  };
-
-  openSnackBar = () => {
-    this.setState({ snackbar_open: true});
-  };
-
-  closeModal = () => {
-    this.setState({ modal_open: false });
-  };
-
-  openModal = () => {
-    this.setState({ modal_open: true});
-  };
-
   render () {
     return (
       <React.Fragment>
-        <Snackbar
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-          open={this.state.snackbar_open}
-          onClose={this.closeSnackBar}
-          ContentProps={{ 'aria-describedby': 'message-id' }}
-          message={<span id="message-id">Nothing could be found</span>}
-        />
-
-        <RsvpModal open={this.state.modal_open} closeModal={this.closeModal} />
-
-        <MuiThemeProvider theme={theme}>
-          <div className="mb-6">
+        <div className="rsvp-form-row mb-8">
+          <div className="fit-content mx-4">
             <TextField
-              id="rsvp_search"
-              label="Code"
-              value={this.state.rsvp}
-              onChange={this.handleChange("rsvp_search")}
+              id="first_name"
+              label="First Name"
+              value={this.state.first_name}
+              onChange={this.handleChange("first_name")}
+              classes={{root: "rsvp-field"}}
             />
           </div>
-          <div className="text-center">
-            <Button variant="outlined" size="small" color="primary" onClick={this.openModal}>
-              Submit
-            </Button>
+          <div className="fit-content mx-4">
+            <TextField
+              id="last_name"
+              label="Last Name"
+              value={this.state.last_name}
+              onChange={this.handleChange("last_name")}
+              classes={{root: "rsvp-field"}}
+            />
           </div>
-        </MuiThemeProvider>
+        </div>
+
+        < div className="rsvp-form-row">
+          <div className="mx-4 mb-6">
+            <div className="text-gold thin"><small>Will you be attending the rehearsal dinner?</small></div>
+            <div>
+              <FormControl component="fieldset">
+                <RadioGroup
+                  value={this.state.attending_rehearsal}
+                  row
+                >
+                  <FormControlLabel
+                    value="yes"
+                    control={<Radio color="primary" value="yes" onChange={this.handleChange("attending_rehearsal")} />}
+                    label="Yes"
+                  />
+                  <FormControlLabel
+                    value="no"
+                    control={<Radio color="primary" value="no" onChange={this.handleChange("attending_rehearsal")} />}
+                    label="No"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

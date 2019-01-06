@@ -4,30 +4,20 @@ import {
   withStyles,
   MuiThemeProvider,
   createMuiTheme,
-  TextField,
   Button,
   Modal,
   Typography,
-  FormControl,
-  FormLabel,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
 } from "@material-ui/core"
 
-import {
-  RadioButtonUncheckedIcon,
-  RadioButtonCheckedIcon,
-} from "@material-ui/icons"
-
 import theme from "./Theme"
+import RsvpForm from "./RsvpForm"
 
 export default class RsvpModal extends React.Component {
   state = {
-    first_name: "",
-    last_name: "",
-    attending_rehearsal: "no",
-  }
+    attendees: [
+      { first_name: "", last_name: "", attending_rehearsal: "no" },
+    ]
+  };
 
   handleChange = name => event => {
     this.setState({
@@ -36,7 +26,6 @@ export default class RsvpModal extends React.Component {
   };
 
   render () {
-    console.log(this.state.attending_rehearsal)
     return (
       <Modal
         aria-labelledby="simple-modal-title"
@@ -57,50 +46,13 @@ export default class RsvpModal extends React.Component {
             </div>
             <MuiThemeProvider theme={theme}>
               <div className="fit-content mx-auto">
-                <div className="rsvp-form-row mb-8">
-                  <div className="fit-content mx-4">
-                    <TextField
-                      id="first_name"
-                      label="First Name"
-                      value={this.state.first_name}
-                      onChange={this.handleChange("first_name")}
-                      classes={{root: "rsvp-field"}}
-                    />
-                  </div>
-                  <div className="fit-content mx-4">
-                    <TextField
-                      id="last_name"
-                      label="Last Name"
-                      value={this.state.last_name}
-                      onChange={this.handleChange("last_name")}
-                      classes={{root: "rsvp-field"}}
-                    />
-                  </div>
-                </div>
-                < div className="rsvp-form-row">
-                  <div className="mx-4 mb-6">
-                    <div className="text-gold thin"><small>Will you be attending the rehearsal dinner?</small></div>
-                    <div>
-                      <FormControl component="fieldset">
-                        <RadioGroup
-                          value={this.state.attending_rehearsal}
-                          row
-                        >
-                          <FormControlLabel
-                            value="yes"
-                            control={<Radio color="primary" value="yes" onChange={this.handleChange("attending_rehearsal")} />}
-                            label="Yes"
-                          />
-                          <FormControlLabel
-                            value="no"
-                            control={<Radio color="primary" value="no" onChange={this.handleChange("attending_rehearsal")} />}
-                            label="No"
-                          />
-                        </RadioGroup>
-                      </FormControl>
-                    </div>
-                  </div>
-                </div>
+
+                {this.state.attendees.map((attendee) => {
+                  return (
+                    <RsvpForm/>
+                  )
+                })}
+
                 <div className="text-center">
                   <Button variant="outlined" size="small" color="primary">
                     RSVP
