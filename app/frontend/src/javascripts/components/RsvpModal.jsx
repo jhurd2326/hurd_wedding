@@ -13,16 +13,22 @@ import theme from "./Theme"
 import RsvpForm from "./RsvpForm"
 
 export default class RsvpModal extends React.Component {
-  state = {
-    attendees: [
-      { first_name: "", last_name: "", attending_rehearsal: "no" },
-    ]
-  };
+  constructor(props) {
+    super(props);
 
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
+    this.state = {
+      attendees: [
+        { first_name: "", last_name: "", attending_rehearsal: "no" },
+      ]
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(index, field, value) {
+    let updated = this.state.attendees;
+    updated[index][field] = value;
+    this.setState({ attendees: updated });
   };
 
   render () {
@@ -46,10 +52,9 @@ export default class RsvpModal extends React.Component {
             </div>
             <MuiThemeProvider theme={theme}>
               <div className="fit-content mx-auto">
-
-                {this.state.attendees.map((attendee) => {
+                {this.state.attendees.map((attendee, i) => {
                   return (
-                    <RsvpForm/>
+                    <RsvpForm key={i} index={i} attendee={attendee} onChange={this.handleChange}/>
                   )
                 })}
 

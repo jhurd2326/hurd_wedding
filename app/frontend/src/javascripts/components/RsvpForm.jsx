@@ -15,16 +15,8 @@ import {
 } from "@material-ui/icons"
 
 export default class RsvpForm extends React.Component {
-  state = {
-    first_name: "",
-    last_name: "",
-    attending_rehearsal: "no",
-  }
-
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
+  handleChange(field, value) {
+    this.props.onChange(this.props.index, field, value);
   };
 
   render () {
@@ -33,19 +25,19 @@ export default class RsvpForm extends React.Component {
         <div className="rsvp-form-row mb-8">
           <div className="fit-content mx-4">
             <TextField
-              id="first_name"
+              id={"first_name_" + this.props.index}
               label="First Name"
-              value={this.state.first_name}
-              onChange={this.handleChange("first_name")}
+              value={this.props.attendee.first_name}
+              onChange={(e) => this.handleChange("first_name", e.target.value)}
               classes={{root: "rsvp-field"}}
             />
           </div>
           <div className="fit-content mx-4">
             <TextField
-              id="last_name"
+              id={"last_name_" + this.props.index}
               label="Last Name"
-              value={this.state.last_name}
-              onChange={this.handleChange("last_name")}
+              value={this.props.attendee.last_name}
+              onChange={(e) => this.handleChange("last_name", e.target.value)}
               classes={{root: "rsvp-field"}}
             />
           </div>
@@ -57,17 +49,17 @@ export default class RsvpForm extends React.Component {
             <div>
               <FormControl component="fieldset">
                 <RadioGroup
-                  value={this.state.attending_rehearsal}
+                  value={this.props.attendee.attending_rehearsal}
                   row
                 >
                   <FormControlLabel
                     value="yes"
-                    control={<Radio color="primary" value="yes" onChange={this.handleChange("attending_rehearsal")} />}
+                    control={<Radio color="primary" value="yes" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
                     label="Yes"
                   />
                   <FormControlLabel
                     value="no"
-                    control={<Radio color="primary" value="no" onChange={this.handleChange("attending_rehearsal")} />}
+                    control={<Radio color="primary" value="no" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
                     label="No"
                   />
                 </RadioGroup>
