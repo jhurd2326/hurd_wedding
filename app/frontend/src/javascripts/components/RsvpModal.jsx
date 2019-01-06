@@ -18,7 +18,7 @@ export default class RsvpModal extends React.Component {
 
     this.state = {
       attendees: [
-        { first_name: "", last_name: "", attending_rehearsal: "no" },
+        { first_name: "", last_name: "", attending_rehearsal: "" },
       ]
     };
 
@@ -52,6 +52,7 @@ export default class RsvpModal extends React.Component {
             </div>
             <MuiThemeProvider theme={theme}>
               <div className="fit-content mx-auto">
+
                 {this.state.attendees.map((attendee, i) => {
                   return (
                     <RsvpForm key={i} index={i} attendee={attendee} onChange={this.handleChange}/>
