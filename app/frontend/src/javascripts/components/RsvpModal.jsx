@@ -13,19 +13,11 @@ import theme from "./Theme"
 import RsvpForm from "./RsvpForm"
 
 export default class RsvpModal extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    attendees: [],
+  };
 
-    this.state = {
-      attendees: [
-        { first_name: "", last_name: "", attending_rehearsal: "" },
-      ]
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(index, field, value) {
+  handleChange = (index, field, value) => {
     let updated = this.state.attendees;
     updated[index][field] = value;
     this.setState({ attendees: updated });
@@ -38,6 +30,7 @@ export default class RsvpModal extends React.Component {
         aria-describedby="simple-modal-description"
         open={this.props.open}
         onClose={this.props.closeModal}
+        onRendered={() => { this.setState({ attendees: this.props.users }) }}
       >
         <div className="rsvp-modal">
           <div className="my-8 mx-12">

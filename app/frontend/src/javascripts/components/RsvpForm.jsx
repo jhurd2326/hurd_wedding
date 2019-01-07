@@ -49,17 +49,17 @@ export default class RsvpForm extends React.Component {
             <div>
               <FormControl component="fieldset">
                 <RadioGroup
-                  value={this.props.attendee.attending_rehearsal}
+                  value={this.props.attendee.attending_rehearsal.toString()}
                   row
                 >
                   <FormControlLabel
-                    value="yes"
-                    control={<Radio color="primary" value="yes" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
+                    value="true"
+                    control={<Radio color="primary" value="true" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
                     label="Yes"
                   />
                   <FormControlLabel
-                    value="no"
-                    control={<Radio color="primary" value="no" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
+                    value="false"
+                    control={<Radio color="primary" value="false" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
                     label="No"
                   />
                 </RadioGroup>
