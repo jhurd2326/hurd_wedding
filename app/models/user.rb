@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   scope :attending_wedding, -> { where(attending_wedding: true) }
   scope :attending_rehearsal, -> { where(attending_rehearsal: true) }
+
+  delegate :invited_to_rehearsal?, to: :rsvp
 end

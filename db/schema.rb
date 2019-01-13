@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_06_210137) do
+ActiveRecord::Schema.define(version: 2019_01_13_052605) do
 
   create_table "rsvps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "allow_additions", default: false
+    t.boolean "invited_to_rehearsal", default: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_01_06_210137) do
     t.datetime "updated_at", null: false
     t.boolean "attending_wedding", default: false
     t.boolean "attending_rehearsal", default: false
+    t.boolean "deletable", default: false
     t.index ["rsvp_id"], name: "index_users_on_rsvp_id"
   end
 
