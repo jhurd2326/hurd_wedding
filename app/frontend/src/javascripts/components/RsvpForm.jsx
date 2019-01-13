@@ -46,6 +46,7 @@ export default class RsvpForm extends React.Component {
                   value={this.props.attendee.first_name}
                   onChange={(e) => this.handleChange("first_name", e.target.value)}
                   classes={{root: "rsvp-field"}}
+                  disabled={!(this.props.attendee.deletable)}
                 />
               </td>
               <td>
@@ -55,6 +56,7 @@ export default class RsvpForm extends React.Component {
                   value={this.props.attendee.last_name}
                   onChange={(e) => this.handleChange("last_name", e.target.value)}
                   classes={{root: "rsvp-field"}}
+                  disabled={!(this.props.attendee.deletable)}
                 />
               </td>
             </tr>
