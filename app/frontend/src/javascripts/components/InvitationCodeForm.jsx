@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core"
 
 import theme from "./Theme"
-import RsvpModal from "./RsvpModal"
+import RsvpDialog from "./RsvpDialog"
 
 export default class InvitationCodeForm extends React.Component {
   state = {
@@ -19,7 +19,7 @@ export default class InvitationCodeForm extends React.Component {
     users: [],
     snackbar_open: false,
     snackbar_message: "",
-    modal_open: false,
+    dialog_open: false,
   };
 
   handleCodeChange = () => event => {
@@ -43,13 +43,13 @@ export default class InvitationCodeForm extends React.Component {
     });
   };
 
-  closeModal = () => {
-    this.setState({ modal_open: false });
+  closeDialog = () => {
+    this.setState({ dialog_open: false });
   };
 
   fetchRsvp = () => {
     if(this.state.users.length > 0) {
-      this.setState({ modal_open: true });
+      this.setState({ dialog_open: true });
     } else {
       fetch("/rsvp_users.json?code=" + this.state.code)
       .then(response => response.json())
@@ -60,7 +60,7 @@ export default class InvitationCodeForm extends React.Component {
   parseRsvp = resp => {
     if(resp.validCode) {
       this.setState({
-        modal_open: true,
+        dialog_open: true,
         users: JSON.parse(resp.users),
       });
     } else {
@@ -80,7 +80,7 @@ export default class InvitationCodeForm extends React.Component {
           message={<span id="message-id">{this.state.snackbar_message}</span>}
         />
 
-        <RsvpModal users={this.state.users} open={this.state.modal_open} closeModal={this.closeModal} />
+        <RsvpDialog users={this.state.users} open={this.state.dialog_open} closeDialog={this.closeDialog} />
 
         <MuiThemeProvider theme={theme}>
           <div className="mb-6">

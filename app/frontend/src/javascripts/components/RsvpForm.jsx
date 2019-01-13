@@ -22,8 +22,8 @@ export default class RsvpForm extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div className="rsvp-form-row mb-8">
-          <div className="fit-content mx-4">
+        <div className="rsvp-form-row">
+          <div className="fit-content mx-auto">
             <TextField
               id={"first_name_" + this.props.index}
               label="First Name"
@@ -32,7 +32,7 @@ export default class RsvpForm extends React.Component {
               classes={{root: "rsvp-field"}}
             />
           </div>
-          <div className="fit-content mx-4">
+          <div className="fit-content mx-auto">
             <TextField
               id={"last_name_" + this.props.index}
               label="Last Name"
@@ -43,29 +43,54 @@ export default class RsvpForm extends React.Component {
           </div>
         </div>
 
-        < div className="rsvp-form-row">
-          <div className="mx-4 mb-6">
-            <div className="text-gold thin"><small>Will you be attending the rehearsal dinner?</small></div>
-            <div>
-              <FormControl component="fieldset">
-                <RadioGroup
-                  value={this.props.attendee.attending_rehearsal.toString()}
-                  row
-                >
-                  <FormControlLabel
-                    value="true"
-                    control={<Radio color="primary" value="true" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
-                    label="Yes"
-                  />
-                  <FormControlLabel
-                    value="false"
-                    control={<Radio color="primary" value="false" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
-                    label="No"
-                  />
-                </RadioGroup>
-              </FormControl>
-            </div>
-          </div>
+        < div className="rsvp-form-row mb-8">
+          <table className="mx-auto">
+            <tr>
+              <td className="text-gold thin"><small>Will you be attending the wedding?</small></td>
+              <td className="radio-buttons">
+                <FormControl component="fieldset">
+                  <RadioGroup
+                    value={this.props.attendee.attending_wedding.toString()}
+                    row
+                  >
+                    <FormControlLabel
+                      value="true"
+                      control={<Radio color="primary" value="true" onChange={(e) => this.handleChange("attending_wedding", e.target.value)} />}
+                      label="Yes"
+                    />
+                    <FormControlLabel
+                      value="false"
+                      control={<Radio color="primary" value="false" onChange={(e) => this.handleChange("attending_wedding", e.target.value)} />}
+                      label="No"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </td>
+            </tr>
+
+            <tr>
+              <td className="text-gold thin"><small>Will you be attending the rehearsal dinner?</small></td>
+              <td className="radio-buttons">
+                <FormControl component="fieldset">
+                  <RadioGroup
+                    value={this.props.attendee.attending_rehearsal.toString()}
+                    row
+                  >
+                    <FormControlLabel
+                      value="true"
+                      control={<Radio color="primary" value="true" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
+                      label="Yes"
+                    />
+                    <FormControlLabel
+                      value="false"
+                      control={<Radio color="primary" value="false" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
+                      label="No"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </td>
+            </tr>
+          </table>
         </div>
       </React.Fragment>
     );
