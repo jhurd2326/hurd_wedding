@@ -62,9 +62,10 @@ export default class InvitationCodeForm extends React.Component {
       this.setState({
         dialog_open: true,
         users: JSON.parse(resp.users),
+        rsvp_id: resp.rsvpId,
       });
     } else {
-      this.openSnackBar("Oops! Nothing code be found");
+      this.openSnackBar("Oops! Nothing could be found");
     }
   };
 
@@ -80,7 +81,12 @@ export default class InvitationCodeForm extends React.Component {
           message={<span id="message-id">{this.state.snackbar_message}</span>}
         />
 
-        <RsvpDialog users={this.state.users} open={this.state.dialog_open} closeDialog={this.closeDialog} />
+        <RsvpDialog
+          users={this.state.users}
+          rsvp_id={this.state.rsvp_id}
+          open={this.state.dialog_open}
+          closeDialog={this.closeDialog}
+        />
 
         <MuiThemeProvider theme={theme}>
           <div className="mb-6">
@@ -92,7 +98,7 @@ export default class InvitationCodeForm extends React.Component {
             />
           </div>
           <div className="text-center">
-            <Button variant="outlined" size="small" color="primary" onClick={this.fetchRsvp}>
+            <Button variant="contained" size="small" color="primary" onClick={this.fetchRsvp}>
               Submit
             </Button>
           </div>

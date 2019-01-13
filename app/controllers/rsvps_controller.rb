@@ -9,6 +9,7 @@ class RsvpsController < ApplicationController
         render json: {
           validCode: @rsvp.present?,
           users: ActiveModel::Serializer::CollectionSerializer.new(rsvp_users, serializer: UserSerializer).to_json,
+          rsvpId: @rsvp&.id,
         }
       end
     end
