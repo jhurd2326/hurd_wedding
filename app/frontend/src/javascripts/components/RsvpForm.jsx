@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   TextField,
   FormControl,
@@ -7,7 +6,6 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
-  Button
 } from "@material-ui/core"
 
 import {
@@ -27,43 +25,41 @@ export default class RsvpForm extends React.Component {
   render () {
     let delete_button;
     if(this.props.attendee.deletable == "true") {
-      delete_button = <div className="text-center">
-                        <Button size="small" color="primary" onClick={this.handleDelete}>
-                          Remove
-                        </Button>
+      delete_button = <div className="text-gold position-absolute round user-delete" onClick={this.handleDelete}>
+                        <div className="pt-1">
+                          x
+                        </div>
                       </div>
     }
 
     return (
-      <div className="mb-8">
+      <div className="mb-8 mx-auto fit-content">
+        <div className="flex position-relative">
+          <div className="mx-2">
+            <TextField
+              id={"first_name_" + this.props.index}
+              label="First Name"
+              value={this.props.attendee.first_name}
+              onChange={(e) => this.handleChange("first_name", e.target.value)}
+              classes={{root: "rsvp-field"}}
+            />
+          </div>
+          <div className="mx-2">
+            <TextField
+              id={"last_name_" + this.props.index}
+              label="Last Name"
+              value={this.props.attendee.last_name}
+              onChange={(e) => this.handleChange("last_name", e.target.value)}
+              classes={{root: "rsvp-field"}}
+            />
+          </div>
+          {delete_button}
+        </div>
         <table className="mx-auto">
           <tbody>
             <tr>
-              <td>
-                <TextField
-                  id={"first_name_" + this.props.index}
-                  label="First Name"
-                  value={this.props.attendee.first_name}
-                  onChange={(e) => this.handleChange("first_name", e.target.value)}
-                  classes={{root: "rsvp-field"}}
-                  disabled={!(this.props.attendee.deletable)}
-                />
-              </td>
-              <td>
-                <TextField
-                  id={"last_name_" + this.props.index}
-                  label="Last Name"
-                  value={this.props.attendee.last_name}
-                  onChange={(e) => this.handleChange("last_name", e.target.value)}
-                  classes={{root: "rsvp-field"}}
-                  disabled={!(this.props.attendee.deletable)}
-                />
-              </td>
-            </tr>
-
-            <tr>
-              <td className="text-gold thin"><small>Will you be attending the wedding?</small></td>
-              <td className="radio-buttons">
+              <td><small className="text-gold thin">Will you be attending the wedding?</small></td>
+              <td className="pl-3">
                 <FormControl component="fieldset">
                   <RadioGroup
                     value={this.props.attendee.attending_wedding.toString()}
@@ -83,33 +79,8 @@ export default class RsvpForm extends React.Component {
                 </FormControl>
               </td>
             </tr>
-
-            <tr>
-              <td className="text-gold thin"><small>Will you be attending the rehearsal dinner?</small></td>
-              <td className="radio-buttons">
-                <FormControl component="fieldset">
-                  <RadioGroup
-                    value={this.props.attendee.attending_rehearsal.toString()}
-                    row
-                  >
-                    <FormControlLabel
-                      value="true"
-                      control={<Radio color="primary" value="true" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
-                      label="Yes"
-                    />
-                    <FormControlLabel
-                      value="false"
-                      control={<Radio color="primary" value="false" onChange={(e) => this.handleChange("attending_rehearsal", e.target.value)} />}
-                      label="No"
-                    />
-                  </RadioGroup>
-                </FormControl>
-              </td>
-            </tr>
-
           </tbody>
         </table>
-        {delete_button}
       </div>
     );
   }
