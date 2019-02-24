@@ -16,7 +16,7 @@ export default class Rsvp extends React.Component {
 
     this.state = {
       attendees: [{ first_name: "", last_name: "", attending_wedding: "false", deletable: "false" }],
-      errors: [],
+      errors: [{first_name: false, last_name: false}],
     };
   }
 
@@ -31,7 +31,7 @@ export default class Rsvp extends React.Component {
 
     this.setState(prevState => ({
       attendees: [...prevState.attendees, new_attendee],
-      errors: [...prevState.errors, {first_name: "false", last_name: "false"}],
+      errors: [...prevState.errors, {first_name: false, last_name: false}],
     }));
   };
 
@@ -47,7 +47,16 @@ export default class Rsvp extends React.Component {
   };
 
   checkAndSubmit = () => {
-    console.log(this.state.attendees);
+    this.checkErrors();
+  };
+
+  checkErrors = () => {
+    let updated = [...this.state.errors];
+    this.state.attendees.map((attendee, i) => {
+      updated[i]["first_name"] = attendee.first_name.length < 1
+      updated[i]["last_name"] = attendee.last_name.length < 1
+    })
+    this.setState({ errors: updated });
   };
 
   render() {
@@ -62,6 +71,7 @@ export default class Rsvp extends React.Component {
                   key={i}
                   index={i}
                   attendee={attendee}
+                  errors={this.state.errors[i]}
                   onChange={this.handleChange}
                   onDelete={this.removeAttendee}
                 />

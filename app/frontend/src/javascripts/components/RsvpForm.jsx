@@ -14,6 +14,15 @@ import {
 } from "@material-ui/icons"
 
 export default class RsvpForm extends React.Component {
+  errorText = (errorPresent) => {
+    if(errorPresent == true) {
+      return "can't be blank"
+    }
+    else {
+      return " "
+    }
+  };
+
   handleChange = (field, value) => {
     this.props.onChange(this.props.index, field, value);
   };
@@ -42,6 +51,8 @@ export default class RsvpForm extends React.Component {
               value={this.props.attendee.first_name}
               onChange={(e) => this.handleChange("first_name", e.target.value)}
               classes={{root: "rsvp-field"}}
+              error={this.props.errors.first_name}
+              helperText={this.errorText(this.props.errors.first_name)}
             />
           </div>
           <div className="mx-2">
@@ -51,6 +62,8 @@ export default class RsvpForm extends React.Component {
               value={this.props.attendee.last_name}
               onChange={(e) => this.handleChange("last_name", e.target.value)}
               classes={{root: "rsvp-field"}}
+              error={this.props.errors.last_name}
+              helperText={this.errorText(this.props.errors.last_name)}
             />
           </div>
           {delete_button}
