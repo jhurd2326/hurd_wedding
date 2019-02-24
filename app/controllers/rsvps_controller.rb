@@ -12,6 +12,6 @@ class RsvpsController < ApplicationController
   private
 
   def rsvp_params
-    params.require(:rsvp).permit(users_attributes: %i(first_name last_name attending_wedding))
+    params.require(:rsvp).permit(attendees_attributes: %i(first_name last_name attending_wedding))
   end
 end

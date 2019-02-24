@@ -75,7 +75,7 @@ export default class Rsvp extends React.Component {
     let csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
 
-    axios.post("/rsvps", {rsvp: { users_attributes: this.state.attendees }})
+    axios.post("/rsvps", {rsvp: { attendees_attributes: this.state.attendees }})
       .then(resp => {
         this.setState({
           snackbar_open: true,
@@ -95,6 +95,7 @@ export default class Rsvp extends React.Component {
           onClose= { () => { this.setState({snackbar_open: false}); } }
           ContentProps={{"aria-describedby": "message-id"}}
           message={<span id="message-id">{this.state.snackbar_message}</span>}
+          autoHideDuration={4000}
         />
 
 
