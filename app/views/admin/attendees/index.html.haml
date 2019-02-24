@@ -1,1 +1,3 @@
-%h1 Attendees
+.full-screen.bg-charcoal.flex{style: "align-items: center;"}
+  .rsvp-table-wrapper.mx-auto.p-12.w-100
+    = react_component "RsvpTable", attendees: @attendees, attendence: @attendence, total: @total_count
