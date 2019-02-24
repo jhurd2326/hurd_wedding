@@ -1,0 +1,10 @@
+.full-screen.background-image--info
+  .dark-overlay.flex{style: "align-items: center;"}
+    .bg-charcoal.mx-auto.p-12.rounded-borders
+      .section-header.text-center
+        = react_component "CustomText", text: "Admin Login", size: "display1", classes: "text-white thin"
+        .header-underline.short.mx-auto.mt-4
+      - if logged_in?
+        %p.text-white You are already logged in
+      - else
+        = react_component "AdminLogin"

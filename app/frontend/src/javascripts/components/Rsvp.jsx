@@ -2,9 +2,7 @@ import React from "react";
 import axios from "axios";
 
 import {
-  withStyles,
   MuiThemeProvider,
-  createMuiTheme,
   Button,
   Snackbar,
 } from "@material-ui/core"

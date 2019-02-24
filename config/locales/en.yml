@@ -3,3 +3,6 @@ en:
     create:
       success: Your RSVP has been saved!
       failure: Oops! Something went wrong, your RSVP could not be saved.
+  sessions:
+    create:
+      failure: User could not be found. Please try again.

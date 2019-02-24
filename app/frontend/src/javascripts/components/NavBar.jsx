@@ -3,17 +3,34 @@ import {
   AppBar,
   Typography,
   Menu,
-  IconButton
-} from '@material-ui/core'
-import SideNav from './SideNav'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+  IconButton,
+  Button,
+  MuiThemeProvider,
+} from "@material-ui/core"
+
+import theme from "./Theme"
+import SideNav from "./SideNav"
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 export default class NavBar extends React.Component {
   render () {
+    let logout_button;
+    if(this.props.user_logged_in == true) {
+      logout_button = <div className="logout-button">
+                        <a href="/logout" className={"hidden-sm-down"}>
+                          <MuiThemeProvider theme={theme}>
+                            <Button size="small" color="primary">
+                              Logout
+                            </Button>
+                          </MuiThemeProvider>
+                        </a>
+                      </div>
+    }
+
     return (
       <AppBar classes={{root: 'navbar'}}>
         <div className="hidden-md-up h-100">
-          <SideNav></SideNav>
+          <SideNav user_logged_in={this.props.user_logged_in} ></SideNav>
         </div>
         <div className="nav-items-wrapper">
           <a href="#wedding-information" className={"nav-item hidden-sm-down"}>
@@ -43,6 +60,7 @@ export default class NavBar extends React.Component {
               RSVP
             </Typography>
           </a>
+          {logout_button}
         </div>
       </AppBar>
     );

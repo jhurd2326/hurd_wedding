@@ -4,9 +4,12 @@ import {
   Drawer,
   List,
   ListItem,
-  ListItemText
+  ListItemText,
+  Button,
+  MuiThemeProvider,
 } from '@material-ui/core'
 
+import theme from "./Theme";
 import MenuIcon from '@material-ui/icons/Menu';
 
 export default class SideNav extends React.Component {
@@ -25,6 +28,17 @@ export default class SideNav extends React.Component {
   }
 
   render () {
+    let logout_button;
+    if(this.props.user_logged_in == true) {
+      logout_button = <a href="/logout">
+                        <MuiThemeProvider theme={theme}>
+                          <Button size="small" color="primary" classes={{root: "ml-4 mb-2"}}>
+                            Logout
+                          </Button>
+                        </MuiThemeProvider>
+                      </a>
+    }
+
     return (
       <React.Fragment>
         <div className="menu-button-wrapper h-100">
@@ -59,6 +73,7 @@ export default class SideNav extends React.Component {
               </ListItem>
             </a>
           </List>
+          {logout_button}
         </Drawer>
       </React.Fragment>
     );

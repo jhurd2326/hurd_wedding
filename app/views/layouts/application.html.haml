@@ -11,6 +11,6 @@
     = stylesheet_pack_tag "stylesheets", "data-turbolinks-track": "reload"
 
   %body
-    = react_component 'NavBar'
+    = react_component 'NavBar', user_logged_in: logged_in?
     = yield
     = render "layouts/footer"

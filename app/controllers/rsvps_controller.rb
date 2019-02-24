@@ -3,9 +3,9 @@
 class RsvpsController < ApplicationController
   def create
     if Rsvp.create(rsvp_params)
-      render json: { status: "success", message: t(".success") }
+      render json: { message: t(".success") }
     else
-      render json: { status: "error", message: t(".failure") }
+      render json: { message: t(".failure") }
     end
   end
 
