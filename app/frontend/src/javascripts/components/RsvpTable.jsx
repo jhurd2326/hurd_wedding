@@ -74,7 +74,7 @@ export default class RsvpTable extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Toolbar classes={{root: "bg-gold-dark"}}>
+        <Toolbar classes={{root: "rsvp-header bg-gold-dark"}}>
           <Typography variant="title" classes={{root: "text-charcoal"}}>
             RSVPs
           </Typography>
