@@ -1,31 +1,17 @@
 # frozen_string_literal: true
 
 class RsvpsController < ApplicationController
-  before_action :find_rsvp
-
-  def users
-    respond_to do |fmt|
-      fmt.json do
-        render json: {
-          validCode: @rsvp.present?,
-          users: ActiveModel::Serializer::CollectionSerializer.new(rsvp_users, serializer: UserSerializer).to_json,
-          rsvpId: @rsvp&.id,
-        }
-      end
+  def create
+    if Rsvp.create(rsvp_params)
+      render json: { status: "success", message: t(".success") }
+    else
+      render json: { status: "error", message: t(".failure") }
     end
   end
 
   private
 
   def rsvp_params
-    params.require(:rsvp).permit(:code)
-  end
-
-  def find_rsvp
-    @rsvp = Rsvp.find_by(code: params[:code].upcase)
-  end
-
-  def rsvp_users
-    @rsvp&.users || []
+    params.require(:rsvp).permit(users_attributes: %i(first_name last_name attending_wedding))
   end
 end
