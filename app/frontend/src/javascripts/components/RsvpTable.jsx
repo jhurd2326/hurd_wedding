@@ -104,7 +104,6 @@ export default class RsvpTable extends React.Component {
               <TableCell align="right" classes={{root: "text-charcoal rsvp-cell"}}>
                 Rsvp ID
               </TableCell>
-              <TableCell classes={{root: "rsvp-cell"}}></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

@@ -43,7 +43,7 @@ export default class RsvpForm extends React.Component {
 
     return (
       <div className="mb-8 mx-auto fit-content">
-        <div className="flex position-relative">
+        <div className="rsvp-field-wrapper position-relative">
           <div className="mx-2">
             <TextField
               id={"first_name_" + this.props.index}
@@ -71,8 +71,8 @@ export default class RsvpForm extends React.Component {
         <table className="mx-auto">
           <tbody>
             <tr>
-              <td><small className="text-gold thin">Will you be attending the wedding?</small></td>
-              <td className="pl-3">
+              <td className="rsvp-radio-cell"><small className="text-gold thin">Will you be attending the wedding?</small></td>
+              <td className="rsvp-radio-cell">
                 <FormControl component="fieldset">
                   <RadioGroup
                     value={this.props.attendee.attending_wedding.toString()}

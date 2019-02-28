@@ -46,7 +46,7 @@ export default class NavBar extends React.Component {
           </a>
 
           <div className="nav-logo">
-            <a href="#welcome" className="home-button" />
+            <a href="/" className="home-button" />
           </div>
 
           <a href="#registry" className={"nav-item hidden-sm-down"}>

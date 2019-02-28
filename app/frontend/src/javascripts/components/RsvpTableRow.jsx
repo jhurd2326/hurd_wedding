@@ -7,12 +7,10 @@ import {
 export default class RsvpTableCell extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
   }
 
   attendenceMarker = (attending) => {
-    if(attending = true) {
+    if(attending == true) {
       return "Yes";
     }
     else {
@@ -38,11 +36,8 @@ export default class RsvpTableCell extends React.Component {
         <TableCell align="right" classes={{root: "text-white thin rsvp-cell"}}>
           <div>{this.attendenceMarker(this.props.attendee.attending_wedding)}</div>
         </TableCell>
-        <TableCell align="right" classes={{root: "text-white thin rsvp-cell"}}>
+        <TableCell align="right" classes={{root: "text-white thin rsvp-cell br-gold"}}>
           <div>{this.props.attendee.rsvp_id}</div>
-        </TableCell>
-        <TableCell classes={{root: "text-white thin rsvp-cell br-gold"}}>
-          Edit
         </TableCell>
       </TableRow>
     );
