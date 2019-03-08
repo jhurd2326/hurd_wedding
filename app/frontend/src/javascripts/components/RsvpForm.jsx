@@ -16,10 +16,19 @@ import {
 export default class RsvpForm extends React.Component {
   errorText = (errorPresent) => {
     if(errorPresent == true) {
-      return "can't be blank"
+      return "can't be blank";
     }
     else {
-      return " "
+      return " ";
+    }
+  };
+
+  radioTextColor = (errorPresent) => {
+    if(errorPresent == true) {
+      return "text-red";
+    }
+    else {
+      return "text-gold";
     }
   };
 
@@ -71,7 +80,11 @@ export default class RsvpForm extends React.Component {
         <table className="mx-auto">
           <tbody>
             <tr>
-              <td className="rsvp-radio-cell"><small className="text-gold thin">Will you be attending the wedding?</small></td>
+              <td className="rsvp-radio-cell">
+                <small className={"thin " + this.radioTextColor(this.props.errors.attending_wedding)}>
+                  Will you be attending the wedding?
+                </small>
+              </td>
               <td className="rsvp-radio-cell">
                 <FormControl component="fieldset">
                   <RadioGroup

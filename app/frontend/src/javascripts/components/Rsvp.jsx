@@ -15,8 +15,8 @@ export default class Rsvp extends React.Component {
     super(props);
 
     this.state = {
-      attendees: [{ first_name: "", last_name: "", attending_wedding: "false", deletable: "false" }],
-      errors: [{first_name: false, last_name: false}],
+      attendees: [{ first_name: "", last_name: "", attending_wedding: "", deletable: "false" }],
+      errors: [{first_name: false, last_name: false, attending_wedding: false}],
       snackbar_open: false,
       snackbar_message: "",
     };
@@ -29,11 +29,11 @@ export default class Rsvp extends React.Component {
   };
 
   addAttendee = () => {
-    let new_attendee = { id: "", first_name: "", last_name: "", attending_wedding: "false", deletable: "true" };
+    let new_attendee = { id: "", first_name: "", last_name: "", attending_wedding: "", deletable: "true" };
 
     this.setState(prevState => ({
       attendees: [...prevState.attendees, new_attendee],
-      errors: [...prevState.errors, {first_name: false, last_name: false}],
+      errors: [...prevState.errors, {first_name: false, last_name: false, attending_wedding: false}],
     }));
   };
 
@@ -60,8 +60,9 @@ export default class Rsvp extends React.Component {
     this.state.attendees.map((attendee, i) => {
       updated[i]["first_name"] = attendee.first_name.length < 1
       updated[i]["last_name"] = attendee.last_name.length < 1
+      updated[i]["attending_wedding"] = attendee.attending_wedding.length < 1
 
-      if(attendee.first_name.length < 1 || attendee.last_name.length < 1) {
+      if(attendee.first_name.length < 1 || attendee.last_name.length < 1 || attendee.attending_wedding.length < 1) {
         errorsPresent = true;
       }
     })
@@ -78,8 +79,8 @@ export default class Rsvp extends React.Component {
         this.setState({
           snackbar_open: true,
           snackbar_message: resp.data.message,
-          attendees: [{ first_name: "", last_name: "", attending_wedding: "false", deletable: "false" }],
-          errors: [{first_name: false, last_name: false}],
+          attendees: [{ first_name: "", last_name: "", attending_wedding: "", deletable: "false" }],
+          errors: [{first_name: false, last_name: false, attending_wedding: false}],
         });
       })
   };
